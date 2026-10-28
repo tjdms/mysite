@@ -136,6 +136,16 @@
     .student .photo { aspect-ratio: 3 / 4; background: var(--blue-soft); border-radius: 14px; display: grid; place-items: center; overflow: hidden; }
     .student .photo img { width: 100%; height: 100%; object-fit: contain; padding: 10px; }
     .student span { display: block; margin-top: 8px; font-weight: 800; font-size: 0.95rem; }
+    .student.expelled { background: #f1ece9; }
+    .student.expelled .photo { position: relative; background: #e2dcd8; }
+    .student.expelled img { filter: grayscale(1); opacity: 0.6; }
+    .student.expelled span { color: var(--muted); text-decoration: line-through; }
+    .student.expelled small { display: block; color: #c0392b; font-weight: 800; font-size: 0.8rem; }
+    .stamp {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-14deg);
+      border: 4px solid #c0392b; color: #c0392b; border-radius: 10px; padding: 2px 14px;
+      font-family: var(--hand); font-size: 2rem; background: rgba(255, 255, 255, 0.75);
+    }
     .group { margin-top: 32px; padding: 20px; text-align: center; }
     .group img { max-height: 380px; margin: 0 auto; object-fit: contain; }
     .group p { margin: 6px 0 0; font-family: var(--hand); font-size: 1.4rem; }
@@ -299,11 +309,11 @@
           <p>오늘도 열심히 공부 중인 우리 수강생들이에요.</p>
         </div>
         <div class="students">
-          <div class="frame student"><div class="photo"><img src="images/student1.png" alt="수강생 1" loading="lazy"></div><span>수강생 1</span></div>
-          <div class="frame student"><div class="photo"><img src="images/student2.png" alt="수강생 2" loading="lazy"></div><span>수강생 2</span></div>
-          <div class="frame student"><div class="photo"><img src="images/student3.png" alt="수강생 3" loading="lazy"></div><span>수강생 3</span></div>
-          <div class="frame student"><div class="photo"><img src="images/student4.png" alt="수강생 4" loading="lazy"></div><span>수강생 4</span></div>
-          <div class="frame student"><div class="photo"><img src="images/student5.png" alt="수강생 5" loading="lazy"></div><span>수강생 5</span></div>
+          <div class="frame student"><div class="photo"><img src="images/student1.png" alt="수강생 치이카와" loading="lazy"></div><span>치이카와</span></div>
+          <div class="frame student"><div class="photo"><img src="images/student2.png" alt="수강생 우사기" loading="lazy"></div><span>우사기</span></div>
+          <div class="frame student"><div class="photo"><img src="images/student4.png" alt="수강생 하치와레" loading="lazy"></div><span>하치와레</span></div>
+          <div class="frame student"><div class="photo"><img src="images/student5.png" alt="수강생 쿠리만주" loading="lazy"></div><span>쿠리만주</span></div>
+          <div class="frame student expelled"><div class="photo"><img src="images/student3.png" alt="정학 후 퇴출된 모몽가" loading="lazy"><b class="stamp">퇴출</b></div><span>모몽가</span><small>정학 처분 후 퇴출</small></div>
         </div>
       </div>
     </section>
@@ -312,11 +322,11 @@
     <section class="bg-blue">
       <div class="container">
         <div class="frame honor">
-          <div class="photo"><img src="images/honorary.png" alt="명예 수강생" loading="lazy"></div>
+          <div class="photo"><img src="images/honorary.png" alt="명예 수강생 랏코" loading="lazy"></div>
           <div>
             <span class="ribbon">🏅 명예 수강생</span>
-            <h3>“なるほど…”<br>우리 학원의 명예 수강생</h3>
-            <p>모든 수업을 묵묵히 지켜보며 수강생들에게 힘이 되어 주는 명예 수강생입니다. 언제나 고개를 끄덕이며 함께 공부해요.</p>
+            <h3>“なるほど…”<br>명예 수강생 랏코</h3>
+            <p>모든 수업을 묵묵히 지켜보며 수강생들에게 힘이 되어 주는 명예 수강생 랏코입니다. 언제나 고개를 끄덕이며 함께 공부해요.</p>
           </div>
         </div>
       </div>
