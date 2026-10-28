@@ -3,79 +3,295 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>환영합니다</title>
+  <title>제초자격증 3급 필승 학원</title>
+  <meta name="description" content="제초자격증 3급 합격을 위한 전문 자격증 학원. 대표 천서은, 문의 010.7114.6474">
   <style>
+    :root {
+      --green-900: #14361f;
+      --green-700: #1f5c34;
+      --green-500: #2e8b4e;
+      --green-100: #e7f3ea;
+      --accent: #f2b632;
+      --text: #1d2a22;
+      --muted: #5b6b61;
+      --bg: #fbfcfa;
+      --radius: 14px;
+    }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-      background: #f4f6fb;
-      color: #1f2937;
-      padding: 16px;
+      font-family: "Pretendard", system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      word-break: keep-all;
     }
-    .card {
-      width: 100%;
-      max-width: 420px;
-      background: #fff;
-      border-radius: 16px;
-      padding: 32px 28px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      text-align: center;
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid #e3e9e4;
+      backdrop-filter: blur(6px);
     }
-    h1 { margin: 0 0 24px; font-size: 1.5rem; }
-    form { display: flex; gap: 8px; }
-    input {
-      flex: 1;
-      min-width: 0;
-      padding: 12px 14px;
-      font-size: 1rem;
-      border: 1px solid #d1d5db;
-      border-radius: 10px;
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+    .logo { font-weight: 800; font-size: 1.1rem; color: var(--green-700); white-space: nowrap; }
+    .logo span { color: var(--accent); }
+    .menu { display: flex; gap: 24px; font-size: 0.95rem; color: var(--muted); }
+    .menu a:hover { color: var(--green-700); }
+    .nav-call {
+      background: var(--green-700); color: #fff; padding: 8px 14px;
+      border-radius: 999px; font-size: 0.9rem; font-weight: 600; white-space: nowrap;
     }
-    input:focus { outline: 2px solid #4f46e5; border-color: transparent; }
-    button {
-      padding: 12px 18px;
-      font-size: 1rem;
-      border: 0;
-      border-radius: 10px;
-      background: #4f46e5;
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--green-900), var(--green-500));
       color: #fff;
-      cursor: pointer;
+      padding: 96px 0 88px;
     }
-    button:hover { background: #4338ca; }
-    #greeting {
-      margin-top: 24px;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #4f46e5;
-      min-height: 1.5em;
+    .badge {
+      display: inline-block; background: var(--accent); color: var(--green-900);
+      font-weight: 700; font-size: 0.85rem; padding: 4px 12px; border-radius: 999px; margin-bottom: 18px;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.25; margin: 0 0 16px; }
+    .hero p { font-size: 1.1rem; opacity: 0.9; margin: 0 0 32px; max-width: 560px; }
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-block; padding: 14px 26px; border-radius: 10px; font-weight: 700;
+    }
+    .btn-primary { background: var(--accent); color: var(--green-900); }
+    .btn-outline { border: 2px solid rgba(255,255,255,0.7); color: #fff; }
+
+    /* Sections */
+    section { padding: 80px 0; }
+    .section-title { text-align: center; margin-bottom: 48px; }
+    .section-title small { color: var(--green-500); font-weight: 700; letter-spacing: 0.08em; }
+    .section-title h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin: 6px 0 10px; }
+    .section-title p { color: var(--muted); margin: 0; }
+
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card {
+      background: #fff; border: 1px solid #e3e9e4; border-radius: var(--radius);
+      padding: 28px 24px;
+    }
+    .card .icon {
+      width: 48px; height: 48px; border-radius: 12px; background: var(--green-100);
+      display: grid; place-items: center; font-size: 1.5rem; margin-bottom: 16px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 1.15rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    .alt { background: var(--green-100); }
+
+    .course {
+      background: #fff; border-radius: var(--radius); padding: 28px 24px;
+      border-top: 4px solid var(--green-500);
+    }
+    .course .tag { font-size: 0.8rem; font-weight: 700; color: var(--green-500); }
+    .course h3 { margin: 6px 0 12px; }
+    .course ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 0.95rem; }
+
+    /* Steps */
+    .steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); counter-reset: step; }
+    .step { position: relative; padding: 24px; background: #fff; border: 1px solid #e3e9e4; border-radius: var(--radius); }
+    .step::before {
+      counter-increment: step; content: counter(step);
+      display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+      background: var(--green-700); color: #fff; font-weight: 700; margin-bottom: 12px;
+    }
+    .step h3 { margin: 0 0 6px; font-size: 1.05rem; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+
+    /* Greeting */
+    .greeting { display: grid; gap: 40px; grid-template-columns: 1fr 1.4fr; align-items: center; }
+    .greeting-box {
+      background: linear-gradient(135deg, var(--green-700), var(--green-500));
+      color: #fff; border-radius: var(--radius); padding: 40px 28px; text-align: center;
+    }
+    .greeting-box .role { opacity: 0.85; font-size: 0.95rem; }
+    .greeting-box .name { font-size: 2rem; font-weight: 800; margin-top: 4px; }
+    .greeting blockquote { margin: 0; font-size: 1.1rem; color: var(--text); }
+    .greeting blockquote p { margin: 0 0 14px; }
+    .greeting cite { color: var(--muted); font-style: normal; }
+
+    /* Contact */
+    .contact { background: var(--green-900); color: #fff; text-align: center; }
+    .contact h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin: 0 0 12px; }
+    .contact p { opacity: 0.85; margin: 0 0 28px; }
+    .phone {
+      display: inline-block; font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 800;
+      color: var(--accent); letter-spacing: 0.02em; margin-bottom: 24px;
+    }
+
+    footer { background: #0e2616; color: rgba(255,255,255,0.65); font-size: 0.88rem; padding: 28px 0; }
+    footer .info { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 8px; }
+
+    @media (max-width: 760px) {
+      .menu { display: none; }
+      .hero { padding: 72px 0 64px; }
+      section { padding: 60px 0; }
+      .greeting { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <main class="card">
-    <h1>이름을 입력해주세요</h1>
-    <form id="nameForm">
-      <input type="text" id="nameInput" placeholder="이름" autocomplete="name" required>
-      <button type="submit">확인</button>
-    </form>
-    <p id="greeting" aria-live="polite"></p>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">제초자격증 3급 <span>필승</span> 학원</a>
+      <nav class="menu">
+        <a href="#about">학원 소개</a>
+        <a href="#courses">교육 과정</a>
+        <a href="#process">수강 절차</a>
+        <a href="#contact">상담 문의</a>
+      </nav>
+      <a href="tel:01071146474" class="nav-call">📞 전화 상담</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="badge">자격증 전문 학원</span>
+        <h1>제초자격증 3급,<br>한 번에 합격하세요</h1>
+        <p>필기부터 실기까지, 시험에 꼭 나오는 내용만 골라 체계적으로 준비합니다. 처음 도전하는 분도 걱정 없이 시작할 수 있습니다.</p>
+        <div class="btns">
+          <a href="#contact" class="btn btn-primary">무료 상담 신청</a>
+          <a href="#courses" class="btn btn-outline">교육 과정 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <small>WHY US</small>
+          <h2>필승 학원을 선택하는 이유</h2>
+          <p>합격이라는 하나의 목표에 집중합니다.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <div class="icon">📘</div>
+            <h3>시험 맞춤 커리큘럼</h3>
+            <p>출제 경향을 분석해 꼭 필요한 이론과 핵심 문제 위주로 구성했습니다.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🌿</div>
+            <h3>실습 중심 교육</h3>
+            <p>장비 사용법과 안전 수칙을 직접 손으로 익혀 실기 시험에 대비합니다.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🙋</div>
+            <h3>1:1 밀착 관리</h3>
+            <p>수강생 개개인의 진도와 취약 부분을 점검하고 보완해 드립니다.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🕒</div>
+            <h3>유연한 수업 시간</h3>
+            <p>직장인·주부·어르신 등 일정에 맞춰 수업 시간을 상담해 드립니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses" class="alt">
+      <div class="container">
+        <div class="section-title">
+          <small>COURSES</small>
+          <h2>교육 과정</h2>
+          <p>필기와 실기를 단계별로 준비합니다.</p>
+        </div>
+        <div class="grid">
+          <div class="course">
+            <span class="tag">STEP 1</span>
+            <h3>필기 대비반</h3>
+            <ul>
+              <li>제초 관련 기초 이론</li>
+              <li>안전 관리 및 관련 법규</li>
+              <li>기출 유형 문제 풀이</li>
+            </ul>
+          </div>
+          <div class="course">
+            <span class="tag">STEP 2</span>
+            <h3>실기 대비반</h3>
+            <ul>
+              <li>예초 장비 구조와 점검</li>
+              <li>장비 조작 및 작업 실습</li>
+              <li>실기 시험 모의 평가</li>
+            </ul>
+          </div>
+          <div class="course">
+            <span class="tag">ALL-IN-ONE</span>
+            <h3>3급 합격 종합반</h3>
+            <ul>
+              <li>필기 + 실기 통합 과정</li>
+              <li>시험 접수 안내 및 일정 관리</li>
+              <li>합격까지 집중 관리</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-title">
+          <small>PROCESS</small>
+          <h2>수강 절차</h2>
+          <p>상담부터 합격까지 함께합니다.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><h3>전화 상담</h3><p>현재 상황과 목표 일정을 편하게 말씀해 주세요.</p></div>
+          <div class="step"><h3>과정 선택</h3><p>수강생에게 맞는 반과 수업 시간을 안내해 드립니다.</p></div>
+          <div class="step"><h3>필기·실기 수업</h3><p>체계적인 커리큘럼으로 단계별로 준비합니다.</p></div>
+          <div class="step"><h3>시험 응시·합격</h3><p>시험 직전까지 최종 점검으로 합격을 돕습니다.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="container greeting">
+        <div class="greeting-box">
+          <div class="role">제초자격증 3급 필승 학원 대표</div>
+          <div class="name">천서은</div>
+        </div>
+        <blockquote>
+          <p>“자격증은 새로운 일을 시작하는 첫걸음입니다. 처음 도전하는 분도 끝까지 포기하지 않도록, 한 분 한 분의 합격을 책임지는 마음으로 가르치겠습니다.”</p>
+          <cite>— 대표 천서은</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>지금 바로 상담하세요</h2>
+        <p>수강 과정, 수업 시간, 시험 일정 등 궁금한 점을 친절하게 안내해 드립니다.</p>
+        <a href="tel:01071146474" class="phone">010.7114.6474</a>
+        <div class="btns" style="justify-content:center">
+          <a href="tel:01071146474" class="btn btn-primary">📞 전화 걸기</a>
+          <a href="sms:01071146474" class="btn btn-outline">💬 문자 보내기</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script>
-    const form = document.getElementById('nameForm');
-    const input = document.getElementById('nameInput');
-    const greeting = document.getElementById('greeting');
+  <footer>
+    <div class="container">
+      <div class="info">
+        <span><strong>제초자격증 3급 필승 학원</strong></span>
+        <span>업종: 자격증 학원</span>
+        <span>대표자: 천서은</span>
+        <span>연락처: 010.7114.6474</span>
+      </div>
+      <div>&copy; <span id="year"></span> 제초자격증 3급 필승 학원. All rights reserved.</div>
+    </div>
+  </footer>
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = input.value.trim();
-      greeting.textContent = name ? `${name} 님 어서오세요` : '';
-    });
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
